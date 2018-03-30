@@ -2,7 +2,7 @@
 
 const queryString = require('querystring')
 
-module.exports = (event, callback) => {
+module.exports = (event, context, callback) => {
   const query = event.queryStringParameters
     ? '?' + queryString.stringify(event.queryStringParameters)
     : ''
