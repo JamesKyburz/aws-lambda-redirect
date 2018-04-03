@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-redirect",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "src/index.js",
   "repository": {
     "type": "git",
