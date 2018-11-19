@@ -3,6 +3,7 @@
 const queryString = require('querystring')
 
 exports.redirect = (event, context, callback) => {
+  if (!process.env.URL) throw new TypeError('missing process.env.URL')
   const query = event.multiValueQueryStringParameters
     ? '?' + queryString.stringify(event.multiValueQueryStringParameters)
     : ''

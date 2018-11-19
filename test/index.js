@@ -85,3 +85,19 @@ test('redirect 301', t => {
     }
   )
 })
+
+test('missing process.env.URL throws error', t => {
+  delete process.env.URL
+  t.plan(1)
+  t.throws(() => {
+    redirect(
+      {
+        requestContext: {
+          path: '/'
+        }
+      },
+      null,
+      f => f
+    )
+  })
+})
