@@ -5,7 +5,7 @@
 [![downloads](https://img.shields.io/npm/dm/aws-lambda-redirect.svg)](https://npmjs.org/package/aws-lambda-redirect)
 [![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/aws-lambda-redirect.svg)](https://greenkeeper.io/)
 
-A lambda that redirects.
+A lambda that redirects http using api gateway.
 
 `process.env.STATUS_CODE` is optional default status code is 302.
 
