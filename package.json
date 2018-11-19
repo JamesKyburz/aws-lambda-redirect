@@ -1,5 +1,12 @@
 {
   "name": "aws-lambda-redirect",
+  "description": "aws lambda redirect for api gateway",
+  "keywords": [
+    "aws-lambda",
+    "serverless",
+    "redirect",
+    "http"
+  ],
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": {
@@ -7,6 +14,12 @@
     "url": "git://github.com/JamesKyburz/aws-lambda-redirect"
   },
   "dependencies": {},
+  "devDependencies": {
+    "tap": "12.1.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
   "files": [
     "src"
   ],
