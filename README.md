@@ -7,7 +7,9 @@
 
 A lambda that redirects.
 
-`process.env.STATUS_CODE` and `process.env.URL` need to be set.
+`process.env.STATUS_CODE` is optional default status code is 302.
+
+`process.env.URL` needs to be set.
 
 # license
 
