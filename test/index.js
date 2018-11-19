@@ -66,6 +66,26 @@ test('redirect with multi querystring values', t => {
   )
 })
 
+test('request url path with stage removed', t => {
+  redirect(
+    {
+      requestContext: {
+        stage: 'dev',
+        path: '/dev/test'
+      }
+    },
+    null,
+    (err, result) => {
+      t.error(err)
+      t.equals(result.statusCode, 302)
+      t.deepEqual(result.multiValueHeaders, {
+        Location: ['https://example.com/test']
+      })
+      t.end()
+    }
+  )
+})
+
 test('redirect 301', t => {
   process.env.STATUS_CODE = 301
   redirect(
