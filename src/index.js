@@ -3,8 +3,8 @@
 const queryString = require('querystring')
 
 exports.redirect = (event, context, callback) => {
-  const query = event.queryStringParameters
-    ? '?' + queryString.stringify(event.queryStringParameters)
+  const query = event.multiValueQueryStringParameters
+    ? '?' + queryString.stringify(event.multiValueQueryStringParameters)
     : ''
   const url =
     process.env.URL +
@@ -14,12 +14,12 @@ exports.redirect = (event, context, callback) => {
     ) +
     query
 
-  const statusCode = process.env.STATUS_CODE || 302
+  const statusCode = +process.env.STATUS_CODE || 302
 
   callback(null, {
     statusCode,
-    headers: {
-      Location: url
+    multiValueHeaders: {
+      Location: [url]
     }
   })
 }
