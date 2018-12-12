@@ -16,7 +16,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tap": "12.1.0"
+    "tap": "12.1.1"
   },
   "scripts": {
     "test": "tap test/*.js"
