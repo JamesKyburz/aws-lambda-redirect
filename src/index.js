@@ -20,7 +20,8 @@ exports.redirect = (event, context, callback) => {
   callback(null, {
     statusCode,
     multiValueHeaders: {
-      Location: [url]
+      Location: [url],
+      ContentType: ['text/html']
     }
   })
 }
