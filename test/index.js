@@ -3,6 +3,8 @@ const { redirect } = require('..')
 
 process.env.URL = 'https://example.com'
 
+const contentType = { 'Content-Type': ['text/html'] }
+
 test('redirect 302', t => {
   redirect(
     {
@@ -15,7 +17,8 @@ test('redirect 302', t => {
       t.error(err)
       t.equals(result.statusCode, 302)
       t.deepEqual(result.multiValueHeaders, {
-        Location: ['https://example.com/']
+        Location: ['https://example.com/'],
+        ...contentType
       })
       t.end()
     }
@@ -37,7 +40,8 @@ test('redirect with querystring', t => {
       t.error(err)
       t.equals(result.statusCode, 302)
       t.deepEqual(result.multiValueHeaders, {
-        Location: ['https://example.com/?x=1']
+        Location: ['https://example.com/?x=1'],
+        ...contentType
       })
       t.end()
     }
@@ -59,7 +63,8 @@ test('redirect with multi querystring values', t => {
       t.error(err)
       t.equals(result.statusCode, 302)
       t.deepEqual(result.multiValueHeaders, {
-        Location: ['https://example.com/?x=1&x=2']
+        Location: ['https://example.com/?x=1&x=2'],
+        ...contentType
       })
       t.end()
     }
@@ -79,7 +84,8 @@ test('request url path with stage removed', t => {
       t.error(err)
       t.equals(result.statusCode, 302)
       t.deepEqual(result.multiValueHeaders, {
-        Location: ['https://example.com/test']
+        Location: ['https://example.com/test'],
+        ...contentType
       })
       t.end()
     }
@@ -99,7 +105,8 @@ test('redirect 301', t => {
       t.error(err)
       t.equals(result.statusCode, 301)
       t.deepEqual(result.multiValueHeaders, {
-        Location: ['https://example.com/']
+        Location: ['https://example.com/'],
+        ...contentType
       })
       t.end()
     }
